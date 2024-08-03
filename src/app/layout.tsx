@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "normalize.css";
+import "./pico.classless.min.css";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +18,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <strong>{"Nhập môn lập trình Python"}</strong>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a href="/t">{"Danh sách câu hỏi"}</a>
+              </li>
+              <li>
+                <a href="/q">{"Đặt câu hỏi"}</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
